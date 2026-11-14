@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { MapPin, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/gala-logo.png";
 import mockup from "@/assets/gala-mockup.jpg";
@@ -295,6 +296,14 @@ function Footer() {
           <img src={logo} alt="Gala" className="h-12 w-auto invert" />
           <p className="mt-6 text-sm text-background/70 max-w-xs leading-relaxed font-light">
             The invitation platform for the world's most considered occasions.
+          </p>
+          <p className="mt-6 flex items-start gap-3 text-sm text-background/70 max-w-sm leading-relaxed font-light">
+            <MapPin className="size-4 shrink-0 mt-0.5 opacity-70" aria-hidden />
+            <span>Kuwait, Al Asimah Governorate, Mirqab, Block 2, Street 150, Reem Marzouq Mohammed Al-Ghanim Building, Floor 2, Office 14.</span>
+          </p>
+          <p className="mt-3 flex items-center gap-3 text-sm text-background/70 font-light">
+            <Phone className="size-4 shrink-0 opacity-70" aria-hidden />
+            <a href="tel:22006865" className="hover:opacity-60 transition-opacity">22006865</a>
           </p>
         </div>
         <div>
