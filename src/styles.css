@@ -2,6 +2,14 @@
 @source "../src";
 @import "tw-animate-css";
 
+/* Bundled Arabic fonts — reliable in production (no Google Fonts dependency) */
+@import "@fontsource/ibm-plex-sans-arabic/300.css";
+@import "@fontsource/ibm-plex-sans-arabic/400.css";
+@import "@fontsource/ibm-plex-sans-arabic/500.css";
+@import "@fontsource/noto-naskh-arabic/400.css";
+@import "@fontsource/noto-naskh-arabic/500.css";
+@import "@fontsource/noto-naskh-arabic/600.css";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -106,4 +114,56 @@
   border: 1px solid var(--color-foreground);
 }
 
+/*
+  Arabic fonts — ONLY when dir=rtl / .lang-ar (English untouched).
+  Italic + missing light weights caused macOS to fall back to a calligraphic
+  system face; force normal style and the bundled pairing with !important.
+*/
+html[dir="rtl"],
+html.lang-ar {
+  --font-serif: "Noto Naskh Arabic", serif;
+  --font-sans: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif !important;
+}
+
+html[dir="rtl"] body,
+html.lang-ar body,
+html[dir="rtl"] :where(p, li, span, a, button, label),
+html.lang-ar :where(p, li, span, a, button, label),
+html[dir="rtl"] .font-sans,
+html.lang-ar .font-sans,
+html[dir="rtl"] .eyebrow,
+html.lang-ar .eyebrow,
+html[dir="rtl"] .btn-primary,
+html.lang-ar .btn-primary,
+html[dir="rtl"] .btn-ghost,
+html.lang-ar .btn-ghost {
+  font-family: "IBM Plex Sans Arabic", sans-serif !important;
+  font-style: normal !important;
+}
+
+html[dir="rtl"] .eyebrow,
+html.lang-ar .eyebrow,
+html[dir="rtl"] .btn-primary,
+html.lang-ar .btn-primary,
+html[dir="rtl"] .btn-ghost,
+html.lang-ar .btn-ghost {
+  text-transform: none;
+  letter-spacing: 0.08em;
+}
+
+/* Headings always win (including .font-light / .font-serif utilities) */
+html[dir="rtl"] :is(h1, h2, h3, h4),
+html.lang-ar :is(h1, h2, h3, h4),
+html[dir="rtl"] :is(h1, h2, h3, h4).font-light,
+html.lang-ar :is(h1, h2, h3, h4).font-light,
+html[dir="rtl"] :is(h1, h2, h3, h4) :is(span, em, i),
+html.lang-ar :is(h1, h2, h3, h4) :is(span, em, i),
+html[dir="rtl"] .font-serif,
+html.lang-ar .font-serif {
+  font-family: "Noto Naskh Arabic", serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  letter-spacing: 0;
+}
 
