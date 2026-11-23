@@ -1,7 +1,10 @@
-import { Link } from "@tanstack/react-router";
-import { MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import {
+  ABOUT_URL,
+  CONTACT_EMAIL,
   INSTAGRAM_URL,
+  PRIVACY_URL,
+  TERMS_URL,
   TIKTOK_URL,
   useI18n,
 } from "@/lib/i18n";
@@ -50,7 +53,10 @@ export function Header() {
           >
             {t("langToggle")}
           </button>
-          <a href="/#contact" className="eyebrow border-b border-background pb-1 hover:opacity-60 transition-opacity">
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="eyebrow border-b border-background pb-1 hover:opacity-60 transition-opacity"
+          >
             {t("becomePartner")}
           </a>
         </div>
@@ -76,26 +82,50 @@ export function Footer() {
           </p>
           <p className="mt-3 flex items-center gap-3 text-sm text-background/70 font-light">
             <Phone className="size-4 shrink-0 opacity-70" aria-hidden />
-            <a href="tel:22006865" className="hover:opacity-60 transition-opacity">22006865</a>
+            <a href="tel:+96522006865" className="hover:opacity-60 transition-opacity">+965 22006865</a>
+          </p>
+          <p className="mt-3 flex items-center gap-3 text-sm text-background/70 font-light">
+            <Mail className="size-4 shrink-0 opacity-70" aria-hidden />
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="hover:opacity-60 transition-opacity"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </p>
         </div>
         <div>
           <p className="eyebrow text-background/60 mb-5">{t("footerCompany")}</p>
           <ul className="space-y-3 text-sm font-light">
             <li>
-              <a href="/#about" className="hover:opacity-60 transition-opacity">
+              <a
+                href={ABOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-60 transition-opacity"
+              >
                 {t("navAbout")}
               </a>
             </li>
             <li>
-              <a href="/#contact" className="hover:opacity-60 transition-opacity">
-                {t("navContact")}
+              <a
+                href={PRIVACY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-60 transition-opacity"
+              >
+                {t("footerPrivacy")}
               </a>
             </li>
             <li>
-              <Link to="/privacy" className="hover:opacity-60 transition-opacity">
-                {t("footerPrivacy")}
-              </Link>
+              <a
+                href={TERMS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-60 transition-opacity"
+              >
+                {t("footerTerms")}
+              </a>
             </li>
           </ul>
         </div>

@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
-import { APP_STORE_URL, PLAY_STORE_URL, useI18n } from "@/lib/i18n";
+import { APP_STORE_URL, CONTACT_EMAIL, PLAY_STORE_URL, useI18n } from "@/lib/i18n";
 import { Header, Footer } from "@/components/site-chrome";
 import logo from "@/assets/gala-logo.png";
 import mockup from "@/assets/gala-mockup.jpg";
@@ -94,7 +94,10 @@ function Hero() {
           {t("heroBody")}
         </p>
         <div className="mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up">
-          <a href="#contact" className="btn-primary hover:bg-transparent hover:text-foreground">
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="btn-primary hover:bg-transparent hover:text-foreground"
+          >
             {t("becomePartner")}
           </a>
           <a href="#about" className="btn-ghost hover:bg-foreground hover:text-background">

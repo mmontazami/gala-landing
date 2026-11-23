@@ -15,6 +15,10 @@ export const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=app.gala&pli=1";
 export const INSTAGRAM_URL = "https://instagram.com/galatheapp";
 export const TIKTOK_URL = "https://tiktok.com/@galatheapp";
+export const CONTACT_EMAIL = "info@trygala.co";
+export const ABOUT_URL = "https://app.trygala.co/about";
+export const PRIVACY_URL = "https://app.trygala.co/privacy";
+export const TERMS_URL = "https://app.trygala.co/terms";
 
 const STORAGE_KEY = "gala-lang";
 
@@ -80,6 +84,7 @@ const messages = {
     footerCompany: "Company",
     footerFollow: "Follow",
     footerPrivacy: "Privacy Policy",
+    footerTerms: "Terms of Service",
     footerInstagram: "Instagram",
     footerTikTok: "TikTok",
     footerDesigned: "Designed with intention",
@@ -104,7 +109,7 @@ const messages = {
       "You may request access, correction, or deletion of your personal information by contacting us using the details below.",
     privacy6Title: "Contact",
     privacy6Body:
-      "For privacy questions, contact us at phone 22006865 or visit our office in Kuwait, Al Asimah Governorate, Mirqab, Block 2, Street 150, Reem Marzouq Mohammed Al-Ghanim Building, Floor 2, Office 14.",
+      "For privacy questions, contact us at phone +965 22006865 or visit our office in Kuwait, Al Asimah Governorate, Mirqab, Block 2, Street 150, Reem Marzouq Mohammed Al-Ghanim Building, Floor 2, Office 14.",
     privacyBack: "Back to home",
     langToggle: "العربية",
     langToggleAria: "Switch to Arabic",
@@ -169,6 +174,7 @@ const messages = {
     footerCompany: "الشركة",
     footerFollow: "تابعنا",
     footerPrivacy: "سياسة الخصوصية",
+    footerTerms: "شروط الخدمة",
     footerInstagram: "إنستغرام",
     footerTikTok: "تيك توك",
     footerDesigned: "صُمّم بقصد",
